@@ -1,0 +1,4 @@
+requirements:
+* add, modify, remove server
+* list server w. status + extra info
+* filter + sort on availability
