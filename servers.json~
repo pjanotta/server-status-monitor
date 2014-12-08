@@ -1,0 +1,38 @@
+[
+    {
+        "ip": "54.77.100.45",
+        "port": 80,
+        "description": "webserver",
+        "url": "/"
+    },
+    {
+        "ip": "54.171.126.19",
+        "port": 80,
+        "description": "API1 healthcheck",
+        "url": "/healthcheck"
+    },
+    {
+        "ip": "54.76.250.49",
+        "port": 80,
+        "description": "API2 healthcheck",
+        "url": "/healthcheck"
+    },
+    {
+        "ip": "54.171.129.65",
+        "port": 80,
+        "description": "API3 healthcheck",
+        "url": "/healthcheck"
+    },
+    {
+        "ip": "54.171.155.110",
+        "port": 80,
+        "description": "API4 healthcheck",
+        "url": "/healthcheck"
+    },
+    {
+        "ip": "54.77.234.164",
+        "port": 8080,
+        "description": "another webserver",
+        "url": "/"
+    }
+]
