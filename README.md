@@ -19,9 +19,10 @@ Also you need to create the initial mongodb data set. The easiest way to do this
 
 The following features were planned, but have not yet been implemented:
 
+* Input validation
 * Status messages in UI after successful tasks or errors
-* Push notification and sync via socket.io
+* Push notifications and sync via socket.io
 * Nicer look
-* Appropiate documentation
+* Appropriate documentation
 * Built process
 * Tests
