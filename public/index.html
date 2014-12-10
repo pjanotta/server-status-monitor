@@ -4,17 +4,17 @@
     <script src="libs/angular.min.js"></script>
     <script src="js/controllers.js"></script>
     <style type="text/css">
-    	table { border-collapse: collapse; margin-bottom: 20px; }
-    	th { border-bottom: 2px solid gray; padding: 10px 8px; }
-    	td { border-bottom: 1px solid #ccc; padding: 10px 8px; }
-    	.success { color: green; }
-    	.failure { color: red; }
-    	#details-view { background-color: #dadada; padding: 20px; margin-top: 50px; margin-bottom: 50px; }
+        table { border-collapse: collapse; margin-bottom: 20px; }
+        th { border-bottom: 2px solid gray; padding: 10px 8px; }
+        td { border-bottom: 1px solid #ccc; padding: 10px 8px; }
+        .success { color: green; }
+        .failure { color: red; }
+        #details-view { background-color: #dadada; padding: 20px; margin-top: 50px; margin-bottom: 50px; }
         fieldset { max-width: 500px; margin-top: 50px; margin-bottom: 50px; }
         label { display: block; }
         input { margin-bottom: 10px; }
     </style>
-	<title>{{title}}</title>
+    <title>{{title}}</title>
 </head>
 <body ng-controller="ServerConfigController">
 <h1>{{title}}</h1>
@@ -22,28 +22,28 @@
 <p>Welcome to the healthcheck dashboard. Here you check server availability and administrate which servers are watched.</p>
 
 <table>
-	<thead>
-		<tr>
-			<th>Server</th>
-			<th>url</th>
-			<th>actions</th>
-			<th>status</th>
-			<th>reachable</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr ng-repeat="server in servers| toArray | orderBy:'successful':true" ng-hide="isHidden[$index]">
-		    <td>{{server.description}}</td>
-	        <td>{{server.host}}{{server.port !== 80 ? ':' + server.port : ''}}{{server.url}}</td>
-		    <td>
-	        	<a href="" ng-click="remove(server._id, $index);">remove</a> 
-	        	<a href="#save-server" ng-click="serverForm.active=true; serverForm.edit=true; serverForm.add=false; select(server._id)">edit</a>
-	        	<a href="#details-view" ng-click="select(server._id)">details</a>
-		    </td>
-		    <td>{{server.status}}</td>
-		    <td ng-class="successClass(server.successful)">{{server.successful}}</td>
-		</tr>
-	</tbody>
+    <thead>
+        <tr>
+            <th>Server</th>
+            <th>url</th>
+            <th>actions</th>
+            <th>status</th>
+            <th>reachable</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="server in servers| toArray | orderBy:'successful':true" ng-hide="isHidden[$index]">
+            <td>{{server.description}}</td>
+            <td>{{server.host}}{{server.port !== 80 ? ':' + server.port : ''}}{{server.url}}</td>
+            <td>
+                <a href="" ng-click="remove(server._id, $index);">remove</a> 
+                <a href="#save-server" ng-click="serverForm.active=true; serverForm.edit=true; serverForm.add=false; select(server._id)">edit</a>
+                <a href="#details-view" ng-click="select(server._id)">details</a>
+            </td>
+            <td>{{server.status}}</td>
+            <td ng-class="successClass(server.successful)">{{server.successful}}</td>
+        </tr>
+    </tbody>
 <table>
 
 <a href="#save-server" ng-click="serverForm.active=true; serverForm.add=true; serverForm.edit=false; deselect()">Add server</a><br>
@@ -51,7 +51,7 @@
 <a href="" ng-click="deselect(); reset()">Reset default server list</a>
 
 <div id="details-view" ng-show="selectedServer">
-	<p><b>Detailled server response:</b></p>
+    <p><b>Detailled server response:</b></p>
     <pre>
     Selected Server: {{servers[selectedServer].description}}<br>
     HTTP status: {{servers[selectedServer].status}}<br>
@@ -63,17 +63,17 @@
 <form>
     <fieldset id="save-server" ng-show="serverForm.active">
         <legend>{{ serverForm.add ? 'Add new Server' : 'Edit Server Settings' }}</legend>
-		<label>Server Name</label><input type="text"  ng-model="description"/><br>
-		<label>Host</label><input type="text" ng-model="host"/><br>
-		<label>Port</label><input type="text" ng-model="port"/><br>
-		<label>url</label><input type="text" ng-model="url"/><br>
-		<label>CORS</label>
-		<input type="checkbox" ng-model="CORS"/><br>
+        <label>Server Name</label><input type="text"  ng-model="description"/><br>
+        <label>Host</label><input type="text" ng-model="host"/><br>
+        <label>Port</label><input type="text" ng-model="port"/><br>
+        <label>url</label><input type="text" ng-model="url"/><br>
+        <label>CORS</label>
+        <input type="checkbox" ng-model="CORS"/><br>
 
-		<button ng-click="add()" ng-show="serverForm.add">add</button>
-		<button ng-click="modify()" ng-show="serverForm.edit">save</button>
-		<button ng-click="selectedServer=null; serverForm.active=false">cancel</button>
-	</fieldset>
+        <button ng-click="add()" ng-show="serverForm.add">add</button>
+        <button ng-click="modify()" ng-show="serverForm.edit">save</button>
+        <button ng-click="selectedServer=null; serverForm.active=false">cancel</button>
+    </fieldset>
 </form>
 
 </body>
